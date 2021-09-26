@@ -1,11 +1,22 @@
 <template>
   <div id="app">
-    <h1>A* - Algorithm Contest</h1>
+    <AppHeader></AppHeader>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {};
+import AppHeader from '@/components/common/AppHeader';
+export default {
+  components: {
+    AppHeader,
+  },
+};
 </script>
 
-<style></style>
+<style>
+@import './css/reset.css';
+body {
+  overflow-x: hidden;
+}
+</style>
