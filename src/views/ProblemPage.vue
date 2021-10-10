@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import ProblemHeader from '@/components/problems/ProblemHeader';
+import ProblemHeader from '@/components/ProblemHeader';
 import ApiPage from '@/views/ApiPage';
 export default {
   components: {

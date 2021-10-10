@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import ProblemHeader from '@/components/problems/ProblemHeader';
+import ProblemHeader from '@/components/ProblemHeader';
 
 export default {
   components: {

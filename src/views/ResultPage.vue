@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import ProblemHeader from '@/components/problems/ProblemHeader';
+import ProblemHeader from '@/components/ProblemHeader';
 import * as _ from 'lodash';
 export default {
   components: {
