@@ -47,6 +47,8 @@ export default {
   background-size: cover;
   opacity: 0;
   animation: 10s alternate infinite;
+  height: 0;
+  padding-bottom: 100%;
 }
 @keyframes ani-1 {
   0% {
