@@ -6,6 +6,7 @@
       v-for="(result, index) in testcaseResults"
       :key="index"
       :result="result.situations"
+      :status="result.status"
       :index="index"
     />
   </main>
@@ -40,7 +41,6 @@ export default {
       try {
         const { data } = await getScenarios();
         this.testcaseResults = data;
-        console.log(data[0].situations);
       } catch (error) {
         console.error(error);
       }

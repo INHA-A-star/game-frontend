@@ -2,16 +2,17 @@
   <section class="main-section">
     <div class="title" @click="toggleTestcase">
       {{ index + 1 }}번 테스트케이스
-      <span v-if="isOpen">⇧</span>
-      <span v-else>⇩</span>
+      <span v-if="isOpen"><i class="fas fa-sort-up"></i></span>
+      <span v-else><i class="fas fa-sort-down"></i></span>
     </div>
     <div class="testcase-container" ref="visualization">
-      <div v-if="score">
+      <div v-if="success">
         <h1>정답입니다 😄</h1>
         <p class="score">score: {{ score }}</p>
       </div>
       <div v-else>
-        <h1>오답입니다 :(</h1>
+        <h1>오답입니다 😓</h1>
+        <p>퍼즐 경계를 벗어나는 명령이 포함되어 있습니다.</p>
       </div>
       <div class="process-container">
         <div class="puzzle-container">
@@ -47,6 +48,9 @@ export default {
       type: Array,
       require: true,
     },
+    status: {
+      type: String,
+    },
     index: {
       type: Number,
       require: true,
@@ -54,11 +58,14 @@ export default {
   },
   created() {
     this.puzzle = this.result[0].puzzle;
+    if (this.status && this.status === 'failed') {
+      this.success = false;
+    }
   },
   data() {
     return {
-      testcaseResults: [],
       puzzle: [],
+      success: true,
       score: 1425,
       isOpen: false,
     };

@@ -230,7 +230,7 @@
           <div class="request">
             PUT /move/{case}<br />
             Authorization: {auth-key}<br />
-            Content-Type: 'application/json
+            Content-Type: application/json
           </div>
 
           <h4>example</h4>
@@ -269,7 +269,7 @@
           <div class="request">
             POST /finish<br />
             Authorization: {auth-key}<br />
-            Content-Type: 'application/json
+            Content-Type: application/json
           </div>
 
           <h4>example</h4>

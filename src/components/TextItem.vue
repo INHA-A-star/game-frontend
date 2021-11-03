@@ -22,7 +22,6 @@ export default {
 }
 .title {
   margin-bottom: 1rem;
-
   color: slategrey;
   font-size: 1.5rem;
   font-weight: bold;

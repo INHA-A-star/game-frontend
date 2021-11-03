@@ -19,6 +19,7 @@
             </div>
           </div>
         </div>
+        {{ message }}
       </template>
     </AppModal>
   </div>
@@ -34,16 +35,17 @@ export default {
   },
   data() {
     return {
+      message: '',
       isDisplay: false,
       initialIndex: {
-        row: 1,
-        col: 1,
+        row: 3,
+        col: 3,
       },
       puzzles: [
-        [11, 13, 6, 3],
-        [2, 0, 1, 9],
-        [5, 7, 15, 12],
-        [4, 14, 8, 10],
+        [1, 2, 3, 4],
+        [5, 6, 7, 8],
+        [9, 10, 11, 12],
+        [13, 14, 15, 0],
       ],
     };
   },
@@ -92,7 +94,31 @@ export default {
         this.puzzles = clonePuzzle;
         this.initialIndex.row++;
       }
+      // this.message =
+      //   `{"puzzle": ${this.printPuzzle(clonePuzzle)}}, ` + this.message;
     },
+
+    printPuzzle(puzzle) {
+      let result = '[';
+      for (let i = 0; i < 4; i++) {
+        result += '[';
+        for (let j = 0; j < 4; j++) {
+          if (j === 3) {
+            result += puzzle[i][j];
+          } else {
+            result += `${puzzle[i][j]}, `;
+          }
+        }
+        if (i === 3) {
+          result += ']';
+        } else {
+          result += '], ';
+        }
+      }
+      result += ']';
+      return result;
+    },
+
     isNotBoundary(keyCode, row, col) {
       if (keyCode === 37) {
         return col - 1 < 0;
